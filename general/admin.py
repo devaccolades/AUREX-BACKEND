@@ -39,7 +39,7 @@ class AboutusAdmin(ModelAdmin):
     fieldsets = (
         ("General", {
             "classes": ("tab-gen",),
-            "fields": ("address1","map_url1","address2","map_url2","phone1","phone2", "email"),
+            "fields": ("address","map_url","phone1","phone2", "email"),
         }),
         ("Social links", {
             "classes": ("tab-soc",),
