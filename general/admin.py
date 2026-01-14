@@ -35,11 +35,11 @@ class SeoAdmin(ModelAdmin):
 
 @admin.register(AboutUs)
 class AboutusAdmin(ModelAdmin):
-    list_display = ("email", "copyright_year",)
+    list_display = ("email",)
     fieldsets = (
         ("General", {
             "classes": ("tab-gen",),
-            "fields": ("address1","map_url1","address2","map_url2","phone1","phone2", "email", "copyright_year"),
+            "fields": ("address1","map_url1","address2","map_url2","phone1","phone2", "email"),
         }),
         ("Social links", {
             "classes": ("tab-soc",),
