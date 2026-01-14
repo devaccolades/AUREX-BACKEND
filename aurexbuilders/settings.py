@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com']
 # Application definition
 
 INSTALLED_APPS = [
+    "ckeditor",           # ✅ REQUIRED
     'unfold',  
     'django.contrib.admin',
     'django.contrib.auth',
