@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-!b6up!qq3!@95n_hclva6*%x@!o2o$8w&g@1&c5_*$t0#h19$c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com']
 
 
 # Application definition
@@ -47,9 +47,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'general',
+    'projects',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+ 
 ]
 
 ROOT_URLCONF = 'aurexbuilders.urls'

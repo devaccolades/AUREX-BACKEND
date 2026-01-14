@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
 
+
 class SeoListAPIView(APIView):
     serializer_class = Seoserializer
 
@@ -68,3 +69,4 @@ class AboutAPIView(APIView):
         ab = AboutUs.objects.all()
         serializer = self.serializer_class(ab, many=True,context={"request": request})
         return Response(serializer.data)    
+
