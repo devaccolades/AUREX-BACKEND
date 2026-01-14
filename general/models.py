@@ -91,7 +91,6 @@ class AboutUs(models.Model):
     phone1 = models.CharField(max_length=20)
     phone2 = models.CharField(max_length=20)
     email = models.EmailField()
-    copyright_year = models.CharField(max_length=25)
 
     linkedin = models.URLField(max_length=255, blank=True, null=True)
     instagram = models.URLField(max_length=255, blank=True, null=True)

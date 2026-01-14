@@ -67,4 +67,4 @@ class AboutAPIView(APIView):
     def get(self, request):
         ab = AboutUs.objects.all()
         serializer = self.serializer_class(ab, many=True,context={"request": request})
-        return Response(serializer.data)
+        return Response(serializer.data)    
