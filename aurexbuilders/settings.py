@@ -142,6 +142,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://admin.aurex.accoladesweb.com",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+    "https://aurex.accoladesweb.com"    
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://localhost:3000",
+    "https://aurex.accoladesweb.com"
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
