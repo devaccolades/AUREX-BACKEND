@@ -3,7 +3,7 @@ from django.core.files.base import File
 from PIL import Image
 from io import BytesIO
 import os
-from ckeditor.fields import RichTextField
+from ckeditor.fields import RichTextField   
 from django.utils.text import slugify
 from datetime import datetime
 
