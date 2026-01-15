@@ -182,4 +182,4 @@ class ProjectUpdates(BaseModel):
         verbose_name_plural = "H.Project Updates"
 
     def __str__(self):
-        return f"{self.project.name} - {self.date}"
+        return f"{self.project.name} - {self.date}"   
