@@ -6,6 +6,9 @@ from projects import views
 urlpatterns = [
 
     #projects
+    path("projects/", views.ProjectsView.as_view(), name="projects"),
+    path("projects/<slug:slug>/", views.ProjectsView.as_view(), name="projects-by-slug"),
+
     path("amenities/", views.AmenitiesView.as_view(), name="amenities-list"),
     path("amenities/<slug:slug>/", views.AmenitiesView.as_view(), name="amenities-by-slug"),
 

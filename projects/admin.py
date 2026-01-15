@@ -22,9 +22,10 @@ class IconsAdmin(ModelAdmin):
 
 @admin.register(Projects)
 class ProjectsAdmin(ModelAdmin):
-    list_display = ("name", "location", "status", "date_added", "is_deleted")
-    search_fields = ("name", "location", "status")
+    list_display = ("name", "location", "status", "project_type", "date_added", "is_deleted")
+    search_fields = ("name", "location", "status", "project_type")
     list_filter = ("status", "date_added", "is_deleted")
+    prepopulated_fields = {"slug": ("name",)}
 
 
 @admin.register(Amenities)
