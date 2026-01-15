@@ -38,6 +38,7 @@ urlpatterns = [
     path('general/', include('general.urls')),
     path('projects/', include('projects.urls')),
     path('gallery/', include('gallery.urls')),
+    path('careers/', include('careers.urls')),
    
     path('api_doc/',
          schema_view.with_ui('swagger', cache_timeout=0),

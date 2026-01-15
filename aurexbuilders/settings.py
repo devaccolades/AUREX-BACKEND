@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'general',
     'projects',
     'gallery',
+    'careers',
     "corsheaders",
 ]
 
