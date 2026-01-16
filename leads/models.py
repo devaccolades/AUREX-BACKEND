@@ -26,7 +26,7 @@ class ProjectEnquiryForm(BaseModel):
 
     class Meta:
         verbose_name = 'Project Enquiry Form'
-        verbose_name_plural = 'Project Enquires'
+        verbose_name_plural = 'Project Enquiries'
         ordering = ('-date_added',)
 
 
