@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 CAREER_TYPE_CHOICES = (
     ('Full time', 'Full time'),
-    ('Part time', 'Part time'),
+    ('Pa        rt time', 'Part time'),
     ('Hybrid', 'Hybrid'),
     ('Remote', 'Remote'),
     ('Freelancer', 'Freelancer'),
@@ -18,8 +18,8 @@ class Careers(BaseModel):
     job_overview =  models.TextField(blank=True, null=True, help_text="Job description")
     location = models.CharField(max_length=255, blank=True, null=True)
     experience = models.CharField(max_length=255, blank=True, null=True)
-    key_responsibilities = RichTextField(blank=True, null=True)
-    requirements = RichTextField(blank=True, null=True)
+    key_responsibilities = models.TextField(blank=True, null=True, help_text="Job responsibilities use comma to separate")
+    requirements = models.TextField(blank=True, null=True, help_text="Job requirements use comma to separate")
 
     class Meta:
         verbose_name = ('Careers')
@@ -39,7 +39,6 @@ class JobApplicationForm(BaseModel):
     cover_letter = models.TextField(blank=True, null=True)
 
     class Meta:
-        db_table = 'career.job_applications'
         verbose_name = ('Job Application')
         verbose_name_plural = ('Job Applications Enquiry')
         ordering = ('-date_added',)

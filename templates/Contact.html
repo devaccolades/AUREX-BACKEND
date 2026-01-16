@@ -220,7 +220,7 @@
                         font-size: 24px;
                         color: #373737;
                         margin: 30px 0 15px;
-                      ">Aurex Builders - Job Application Details</h3>
+                      ">Aurex Builders - Contact Details</h3>
                 </td>
               </tr>
             </table>
@@ -246,134 +246,32 @@
                         width: 90%;
                         border-radius: 5px;
                       ">
-                    <tr class="details-row" style="
-                          padding: 0;
-                          margin: 0;
-                          display: block;
-                          margin-bottom: 5px;
-                        ">
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <p style="padding: 0; margin: 0; color: #565656"><b>Name :</b></p>
-                      </td>
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <span style="
-                              margin: 0;
-                              color: #373737;
-                              font-weight: 600;
-                              margin-left: 5px;
-                            ">{{ name }}</span>
-                      </td>
-                    </tr>
-                    <tr class="details-row" style="
-                          padding: 0;
-                          margin: 0;
-                          display: block;
-                          margin-bottom: 5px;
-                        ">
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <p style="padding: 0; margin: 0; color: #565656"><b>Email :</b></p>
-                      </td>
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <span style="
-                              margin: 0;
-                              color: #373737;
-                              font-weight: 600;
-                              margin-left: 5px;
-                            "><a href="mailto:{{ email }}">{{ email }}</a></span>
-                      </td>
-                    </tr>
-                    <tr class="details-row" style="
-                          padding: 0;
-                          margin: 0;
-                          display: block;
-                          margin-bottom: 5px;
-                        ">
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <p style="padding: 0; margin: 0; color: #565656"><b>Phone :</b></p>
-                      </td>
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <span style="
-                              margin: 0;
-                              color: #373737;
-                              font-weight: 600;
-                              margin-left: 5px;
-                            ">{{ number }}</span>
-                      </td>
-                    </tr>
-                    <tr class="details-row" style="
-                      padding: 0;
-                      margin: 0;
-                      display: block;
-                      margin-bottom: 5px;
-                    ">
-                      {% if position %}
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <p style="padding: 0; margin: 0; color: #565656"><b>Position :</b></p>
-                      </td>
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <span style="
-                          margin: 0;
-                          color: #373737;
-                          font-weight: 600;
-                          margin-left: 5px;
-                        ">{{ position }}</span>
-                      </td>
-                      {% endif %}
-                    </tr>
-                     <tr class="details-row" style="
-                          padding: 0;
-                          margin: 0;
-                          display: block;
-                          margin-bottom: 5px;
-                        ">
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <p style="padding: 0; margin: 0; color: #565656"><b>Cover Letter :</b></p>
-                      </td>
-                      <td style="padding: 0; margin: 0; display: inline-block">
-                        <span style="
-                              margin: 0;
-                              color: #373737;
-                              font-weight: 600;
-                              margin-left: 5px;
-                            ">{{ cover_letter }}</span>
-                      </td>
-                    </tr>
-                    <tr class="details-row" style="
-                    padding: 0;
-                    margin: 0;
-                    display: block;
-                    margin-bottom: 5px;
-                  ">
-                <td style="padding: 0; margin: 0; display: inline-block">
-                  <p style="padding: 0; margin: 0; color: #565656"><b>Cv :</b></p>
-                </td>
-                <td style="padding: 0; margin: 0; display: inline-block">
-                  <span style="
-                        margin: 0;
-                        color: #373737;
-                        font-weight: 600;
-                        margin-left: 5px;
-                      "><a href="{{cv_file}}">{{cv_file}}</a></span>
-                </td>
-              </tr>
-                    <tr class="details-row" style="
-                    padding: 0;
-                    margin: 0;
-                    display: block;
-                    margin-bottom: 5px;
-                  ">
-                <td style="padding: 0; margin: 0; display: inline-block">
-                  <p style="padding: 0; margin: 0; color: #565656"><b>Date :</b></p>
-                </td>
-                <td style="padding: 0; margin: 0; display: inline-block">
-                  <span style="
-                        margin: 0;
-                        color: #373737;
-                        font-weight: 600;
-                        margin-left: 5px;
-                      ">{{ date_added }}</span>
-                </td>
-              </tr>
+                   <tr class="details-row">
+                    <td><p style="color: #565656"><b>Name :</b></p></td>
+                    <td><span style="color: #373737; font-weight: 600; margin-left: 5px;">{{ name }}</span></td>
+                  </tr>
+                  
+                  <tr class="details-row">
+                    <td><p style="color: #565656"><b>Email :</b></p></td>
+                    <td><span style="color: #373737; font-weight: 600; margin-left: 5px;"><a href="mailto:{{ email }}">{{ email }}</a></span></td>
+                  </tr>
+                  
+                  <tr class="details-row">
+                    <td><p style="color: #565656"><b>Phone :</b></p></td>
+                    <td><span style="color: #373737; font-weight: 600; margin-left: 5px;">{{ phone }}</span></td>
+                  </tr>
+                  
+                  <tr class="details-row">
+                    <td><p style="color: #565656"><b>Message :</b></p></td>
+                    <td><span style="color: #373737; font-weight: 600; margin-left: 5px;">{{ message }}</span></td>
+                  </tr>
+                  
+                 
+                  
+                  <tr class="details-row">
+                    <td><p style="color: #565656"><b>Date Added :</b></p></td>
+                    <td><span style="color: #373737; font-weight: 600; margin-left: 5px;">{{ date_added }}</span></td>
+                  </tr>
                   </table>
                 </td>
               </tr>

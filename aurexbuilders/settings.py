@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-!b6up!qq3!@95n_hclva6*%x@!o2o$8w&g@1&c5_*$t0#h19$c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com','72.60.102.54']
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com','72.60.102.54']
 
 
 # Application definition
@@ -169,3 +169,10 @@ CORS_ALLOWED_ORIGINS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True

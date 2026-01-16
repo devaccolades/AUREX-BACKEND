@@ -32,16 +32,16 @@ class JobApplicationPostAPIView(APIView):
                 instance = serializer.save()
 
                 context = {
-                    'job_name': instance.position,
+                    'position': instance.position,
                     'name': instance.name,
                     'email': instance.email,
                     'number': instance.number,
-                    'location': instance.location,
+                    'cover_letter': instance.cover_letter,
                     'date_added': instance.date_added,
                 }
 
                 html_content = get_template('JobApplication.html').render(context)
-                subject = 'Enquiry for abe-education'
+                subject = 'Enquiry for Aurex Builders Careers'
                 from_email = settings.EMAIL_HOST_USER
                 to_email =  ["manjima.accolades@gmail.com"]
 
