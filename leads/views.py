@@ -22,7 +22,7 @@ class ContactPostAPIView(APIView):
                 context = serializer.data
                 template = get_template('Contact.html').render(context)
                 send_mail(
-                    'New Get Expert Advice Submission on Aurex Builders',
+                    'New Contact Submission on Aurex Builders',
                     None,
                     settings.EMAIL_HOST_USER,
                     ["manjima.accolades@gmail.com"], 
@@ -60,7 +60,7 @@ class ProjectEnquiryPostAPIView(APIView):
                 context = serializer.data
                 template = get_template('ProjectEnquiry.html').render(context)
                 send_mail(
-                    'New Project Enquiry Submission on Auerex Builders',
+                    'New Project Enquiry Submission on Aurex Builders',
                     None,
                     settings.EMAIL_HOST_USER,
                     ["manjima.accolades@gmail.com"], 

@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 CAREER_TYPE_CHOICES = (
     ('Full time', 'Full time'),
-    ('Part time', 'Part time'),
+    ('Pa        rt time', 'Part time'),
     ('Hybrid', 'Hybrid'),
     ('Remote', 'Remote'),
     ('Freelancer', 'Freelancer'),

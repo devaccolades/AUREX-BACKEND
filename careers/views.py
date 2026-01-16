@@ -32,7 +32,7 @@ class JobApplicationPostAPIView(APIView):
                 instance = serializer.save()
 
                 context = {
-                    'job_name': instance.position,
+                    'position': instance.position,
                     'name': instance.name,
                     'email': instance.email,
                     'number': instance.number,
