@@ -1,6 +1,7 @@
 from django.db import models
 from projects.models import *
 from ckeditor.fields import RichTextField
+from django.utils.text import slugify
 
 # Create your models here.
 CAREER_TYPE_CHOICES = (
@@ -21,7 +22,7 @@ class Careers(BaseModel):
     key_responsibilities = models.TextField(blank=True, null=True, help_text="Job responsibilities use comma to separate")
     requirements = models.TextField(blank=True, null=True, help_text="Job requirements use comma to separate")
     slug = models.SlugField(max_length=100, unique=True, blank=True)
-    
+
     class Meta:
         verbose_name = ('Careers')
         verbose_name_plural = ('Careers')
@@ -30,7 +31,21 @@ class Careers(BaseModel):
     def __str__(self):
         return self.job_title if self.job_title else str(self.id)
     
+    def save(self, *args, **kwargs):
+        if not self.slug and self.job_title:
+            base_slug = slugify(self.job_title)
+            slug = base_slug
+            counter = 1
 
+            while Careers.objects.filter(slug=slug).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+
+            self.slug = slug
+
+        super().save(*args, **kwargs)
+
+        
 class JobApplicationForm(BaseModel):
     name = models.CharField(max_length=255, blank=  True, null=True)
     position = models.CharField(blank=True, null=True, max_length=255)
