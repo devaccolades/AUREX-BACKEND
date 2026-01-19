@@ -20,7 +20,8 @@ class Careers(BaseModel):
     experience = models.CharField(max_length=255, blank=True, null=True)
     key_responsibilities = models.TextField(blank=True, null=True, help_text="Job responsibilities use comma to separate")
     requirements = models.TextField(blank=True, null=True, help_text="Job requirements use comma to separate")
-
+    slug = models.SlugField(max_length=100, unique=True, blank=True)
+    
     class Meta:
         verbose_name = ('Careers')
         verbose_name_plural = ('Careers')
