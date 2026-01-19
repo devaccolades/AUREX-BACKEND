@@ -94,9 +94,8 @@ class AboutUs(models.Model):
 
     linkedin = models.URLField(max_length=255, blank=True, null=True)
     instagram = models.URLField(max_length=255, blank=True, null=True)
-    telegram = models.URLField(max_length=255, blank=True, null=True)
+    facebook = models.URLField(max_length=255, blank=True, null=True)
     youtube = models.URLField(max_length=255, blank=True, null=True)
-    x_link = models.URLField("X (Twitter) Link", max_length=255, blank=True, null=True)
     map_url = models.URLField(max_length=500, blank=True, null=True)
 
     class Meta:
