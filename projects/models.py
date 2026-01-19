@@ -49,6 +49,7 @@ class Projects(BaseModel):
     logo_alt = models.CharField(max_length=125, null=True, blank=True)
     qr_code = models.ImageField(upload_to='projects/qr', blank=True, null=True)
     location = models.CharField(max_length=500, blank=True, null=True)
+    land_mark = models.CharField(max_length=225, null=True, blank=True)
     map_iframe = models.TextField(null=True, blank=True)
     sub_text = models.CharField(max_length=200, blank=True, null=True)
     short_description = models.TextField(blank=True, null=True)
