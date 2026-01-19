@@ -43,7 +43,7 @@ class AboutusAdmin(ModelAdmin):
         }),
         ("Social links", {
             "classes": ("tab-soc",),
-            "fields": ("linkedin", "instagram", "x_link","telegram","youtube"),
+            "fields": ("linkedin", "instagram","facebook","youtube"),
         }),
 
     )
