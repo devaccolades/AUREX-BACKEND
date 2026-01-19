@@ -11,6 +11,7 @@ class SpaceGallery(BaseModel):
     class Meta:
         verbose_name = "Space Gallery"
         verbose_name_plural = "Space Gallery"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"Gallery Image for {self.title}"
@@ -26,6 +27,7 @@ class GalleryVideos(BaseModel):
     class Meta:
         verbose_name = "Gallery Videos"
         verbose_name_plural = "Gallery Videos"
+        ordering = ('-date_added',)
 
     def clean(self):
         existing_cards = GalleryVideos.objects.exclude(id=self.id).count()
@@ -42,6 +44,7 @@ class Events(BaseModel):
     class Meta:
         verbose_name = "Event"
         verbose_name_plural = "Events"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.event_name}"
@@ -54,6 +57,7 @@ class EventGallery(BaseModel):
     class Meta:
         verbose_name = "Event Gallery"
         verbose_name_plural = "Event Gallery"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"Gallery Image for {self.event.event_name}"
