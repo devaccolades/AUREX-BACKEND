@@ -23,6 +23,7 @@ class Icons(BaseModel):
     class Meta:
         verbose_name = "Icons"
         verbose_name_plural = "I.Icons"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return self.name
@@ -72,6 +73,7 @@ class Projects(BaseModel):
     class Meta:
         verbose_name = "Projects"
         verbose_name_plural = "A.Projects"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return self.name 
@@ -86,6 +88,7 @@ class Amenities(BaseModel):
     class Meta:
         verbose_name = "Amenities"
         verbose_name_plural = "B.Amenities"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name} - {self.name}"
@@ -99,6 +102,7 @@ class CommonFacilities(BaseModel):
     class Meta:
         verbose_name = "Common Facilities"
         verbose_name_plural = "C.Common Facilities"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name} - {self.name}"
@@ -121,6 +125,7 @@ class FloorPlans(BaseModel):
     class Meta:
         verbose_name = "Floor Plans"
         verbose_name_plural = "D.Floor Plans"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name}"
@@ -134,6 +139,7 @@ class Specifications(BaseModel):
     class Meta:
         verbose_name = "Specifications"
         verbose_name_plural = "E.Specifications"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name} - {self.title}"
@@ -156,6 +162,7 @@ class LocationAdvantages(BaseModel):
     class Meta:
         verbose_name = "Location Advantages"
         verbose_name_plural = "F.Location Advantages"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name} - {self.category}"
@@ -167,6 +174,7 @@ class YoutubeVideos(BaseModel):
     class Meta:
         verbose_name = "YouTube Videos"
         verbose_name_plural = "G.YouTube Videos"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name} - {self.video_url}"
@@ -180,6 +188,7 @@ class ProjectUpdates(BaseModel):
     class Meta:
         verbose_name = "Project Updates"
         verbose_name_plural = "H.Project Updates"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name} - {self.date}"   
