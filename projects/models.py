@@ -55,6 +55,8 @@ class Projects(BaseModel):
     short_description = models.TextField(blank=True, null=True)
     image = models.FileField(upload_to='projects/images', blank=True, null=True)
     image_alt = models.CharField(max_length=125, null=True, blank=True)
+    mobile_image = models.FileField(upload_to='projects/mobile_images', blank=True, null=True)
+    mobile_image_alt = models.CharField(max_length=125, null=True, blank=True)
     status = models.CharField(choices=PROJECT_STATUS_CHOICES, max_length=255, blank=True, null=True)
     k_rera = models.CharField(max_length=100, blank=True, null=True)
     property_type = models.CharField(max_length=100, blank=True, null=True)
