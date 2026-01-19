@@ -7,6 +7,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from django.template.loader import get_template
 from django.conf import settings
 from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404
 
 from .models import *
 from .serializers import *
@@ -22,6 +23,16 @@ class CareersViewset(APIView):
         except Exception as e:
             return Response(str(e), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
+
+class CareerRetrieveAPIView(APIView):
+    serializer_class = CareerSerializer
+
+    def get(self, request, slug):
+        blog= get_object_or_404(Careers, slug=slug)
+        serializer = self.serializer_class(blog, context={"request": request})
+        return Response(serializer.data)
+    
+
 class JobApplicationPostAPIView(APIView):
     parser_classes = (MultiPartParser, FormParser)
     def post(self, request):
