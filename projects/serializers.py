@@ -13,6 +13,11 @@ class ProjectsSerializer(serializers.ModelSerializer):
         model = Projects
         fields = "__all__"
 
+class ProjectImagesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectImages
+        fields = "__all__"
+
 
 class AmenitiesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,9 +26,15 @@ class AmenitiesSerializer(serializers.ModelSerializer):
 
 
 class CommonFacilitiesSerializer(serializers.ModelSerializer):
+    icon = serializers.CharField(source="icon.name", read_only=True)
     class Meta:
         model = CommonFacilities
-        fields = "__all__"
+        fields = (
+            "id",
+            "name",
+            "subtext",
+            "icon",
+        )
 
 
 class FloorPlansSerializer(serializers.ModelSerializer):
@@ -33,15 +44,36 @@ class FloorPlansSerializer(serializers.ModelSerializer):
 
 
 class SpecificationsSerializer(serializers.ModelSerializer):
+    icon = serializers.CharField(source="icon.name", read_only=True)
     class Meta:
         model = Specifications
-        fields = "__all__"
+        fields = (
+            "id",
+            "title",
+            "description",
+            "icon",
+        )
 
 
 class LocationAdvantagesSerializer(serializers.ModelSerializer):
+    icon = serializers.CharField(source="icon.name", read_only=True)
     class Meta:
         model = LocationAdvantages
-        fields = "__all__"
+        fields = (
+            "id",
+            "category",
+            "icon",
+            "advantage_1",
+            "distance_1",
+            "advantage_2",
+            "distance_2",
+            "advantage_3",
+            "distance_3",
+            "advantage_4",
+            "distance_4",
+            "advantage_5",
+            "distance_5",
+        )
 
 
 class YoutubeVideosSerializer(serializers.ModelSerializer):

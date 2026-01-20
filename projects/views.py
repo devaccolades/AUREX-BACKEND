@@ -46,7 +46,27 @@ class ProjectsView(APIView):
                 {"error": str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+        
+class ProjectImagesView(APIView):
+    serializer_class = projects_serializer.ProjectImagesSerializer
 
+    def get(self, request, slug=None):
+        try:
+            if slug:
+                project = projects_models.Projects.objects.filter(slug=slug, is_deleted=False).first()
+                if not project:
+                    return Response({"error": "Project not found"}, status=status.HTTP_404_NOT_FOUND)
+
+                data = projects_models.ProjectImages.objects.filter(project=project, is_deleted=False)
+            else:
+                data = projects_models.ProjectImages.objects.filter(is_deleted=False)
+
+            serializer = self.serializer_class(data, many=True, context={"request": request})
+            return Response(serializer.data)
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
 
 class AmenitiesView(APIView):
     serializer_class = projects_serializer.AmenitiesSerializer

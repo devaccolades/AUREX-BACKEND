@@ -9,9 +9,12 @@ urlpatterns = [
     path("projects/", views.ProjectsView.as_view(), name="projects"),
     path("projects/<slug:slug>/", views.ProjectsView.as_view(), name="projects-by-slug"),
 
-    path("amenities/", views.AmenitiesView.as_view(), name="amenities-list"),
+    path("amenprities/", views.AmenitiesView.as_view(), name="amenities-list"),
     path("amenities/<slug:slug>/", views.AmenitiesView.as_view(), name="amenities-by-slug"),
 
+    path("project-images/", views.ProjectImagesView.as_view(), name="project-images-list"),
+    path("project-images/<slug:slug>/", views.ProjectImagesView.as_view(), name="project-images-by-slug"),
+    
     path("common-facilities/", views.CommonFacilitiesView.as_view(), name="common-facilities"),
     path("common-facilities/<slug:slug>/", views.CommonFacilitiesView.as_view(), name="common-facilities-by-slug"),
 
