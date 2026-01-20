@@ -50,7 +50,7 @@ class JobApplicationForm(BaseModel):
     name = models.CharField(max_length=255, blank=  True, null=True)
     position = models.CharField(blank=True, null=True, max_length=255)
     email = models.EmailField()
-    number = models.PositiveBigIntegerField(blank=True, null=True)
+    number = models.CharField(blank=True, null=True, max_length=255)
     cv_file = models.FileField(upload_to='cvs/')
     cover_letter = models.TextField(blank=True, null=True)
 
