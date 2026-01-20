@@ -70,3 +70,23 @@ class AboutAPIView(APIView):
         serializer = self.serializer_class(ab, many=True,context={"request": request})
         return Response(serializer.data)    
 
+
+#   faq
+class FaqListAPIView(APIView):
+    serializer_class = Faqserializer
+
+    def get(self, request):
+        blogs = FAQ.objects.all()
+        serializer = self.serializer_class(blogs, many=True,context={"request": request})
+        return Response(serializer.data)
+
+
+
+class FaqRetrieveAPIView(APIView):
+    serializer_class = Faqserializer
+
+    def get(self, request, slug):
+        """Retrieve a single university by id."""
+        blog= get_object_or_404(FAQ, slug=slug)
+        serializer = self.serializer_class(blog, context={"request": request})
+        return Response(serializer.data)

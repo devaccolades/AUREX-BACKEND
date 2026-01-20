@@ -27,3 +27,9 @@ class Aboutserializer(serializers.ModelSerializer):
     class Meta:
         model = AboutUs
         fields = "__all__"
+
+
+class Faqserializer(serializers.ModelSerializer):
+    class Meta:
+        model = FAQ
+        fields = "__all__"
