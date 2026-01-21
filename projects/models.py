@@ -79,18 +79,7 @@ class Projects(BaseModel):
     def __str__(self):
         return self.name 
 
-class ProjectImages(BaseModel):
-    project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='project_images')
-    image = models.FileField(upload_to='projects/gallery/images', blank=True, null=True)
-    image_alt = models.CharField(max_length=125, null=True, blank=True)
 
-    class Meta:
-        verbose_name = "Project Images"
-        verbose_name_plural = "B.Project Images"
-        ordering = ('-date_added',)
-
-    def __str__(self):
-        return f"{self.project.name} - Image"
     
 class Amenities(BaseModel):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='amenities')
@@ -101,7 +90,7 @@ class Amenities(BaseModel):
 
     class Meta:
         verbose_name = "Amenities"
-        verbose_name_plural = "C.Amenities"
+        verbose_name_plural = "B.Amenities"
         ordering = ('-date_added',)
 
     def __str__(self):
@@ -115,7 +104,7 @@ class CommonFacilities(BaseModel):
 
     class Meta:
         verbose_name = "Common Facilities"
-        verbose_name_plural = "D.Common Facilities"
+        verbose_name_plural = "C.Common Facilities"
         ordering = ('-date_added',)
 
     def __str__(self):
@@ -138,7 +127,7 @@ class FloorPlans(BaseModel):
 
     class Meta:
         verbose_name = "Floor Plans"
-        verbose_name_plural = "E.Floor Plans"
+        verbose_name_plural = "D.Floor Plans"
         ordering = ('-date_added',)
 
     def __str__(self):
@@ -152,7 +141,7 @@ class Specifications(BaseModel):
 
     class Meta:
         verbose_name = "Specifications"
-        verbose_name_plural = "F.Specifications"
+        verbose_name_plural = "E.Specifications"
         ordering = ('-date_added',)
 
     def __str__(self):
@@ -175,7 +164,7 @@ class LocationAdvantages(BaseModel):
 
     class Meta:
         verbose_name = "Location Advantages"
-        verbose_name_plural = "G.Location Advantages"
+        verbose_name_plural = "F.Location Advantages"
         ordering = ('-date_added',)
 
     def __str__(self):
@@ -187,7 +176,7 @@ class YoutubeVideos(BaseModel):
 
     class Meta:
         verbose_name = "YouTube Videos"
-        verbose_name_plural = "H.YouTube Videos"
+        verbose_name_plural = "G.YouTube Videos"
         ordering = ('-date_added',)
 
     def __str__(self):
@@ -201,8 +190,21 @@ class ProjectUpdates(BaseModel):
 
     class Meta:
         verbose_name = "Project Updates"
-        verbose_name_plural = "I.Project Updates"
+        verbose_name_plural = "H.Project Updates"
         ordering = ('-date_added',)
 
     def __str__(self):
         return f"{self.project.name} - {self.date}"   
+    
+class ProjectImages(BaseModel):
+    project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='project_images')
+    image = models.FileField(upload_to='projects/gallery/images', blank=True, null=True)
+    image_alt = models.CharField(max_length=125, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Project Images"
+        verbose_name_plural = "I.Project Images"
+        ordering = ('-date_added',)
+
+    def __str__(self):
+        return f"{self.project.name} - Image"

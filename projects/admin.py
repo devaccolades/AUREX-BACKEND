@@ -28,11 +28,11 @@ class ProjectsAdmin(ModelAdmin):
     list_filter = ("status", "date_added", "is_deleted")
     prepopulated_fields = {"slug": ("name",)}
 
-@admin.register(ProjectImages)
-class ProjectImagesAdmin(ModelAdmin):
-    list_display = ("project", "image", "date_added", "is_deleted")
-    search_fields = ("project__name",)
-    list_filter = ("date_added", "is_deleted")
+# @admin.register(ProjectImages)
+# class ProjectImagesAdmin(ModelAdmin):
+#     list_display = ("project", "image", "date_added", "is_deleted")
+#     search_fields = ("project__name",)
+#     list_filter = ("date_added", "is_deleted")
 
 @admin.register(Amenities)
 class AmenitiesAdmin(ModelAdmin):

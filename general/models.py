@@ -6,6 +6,7 @@ import os
 from ckeditor.fields import RichTextField   
 from django.utils.text import slugify
 from datetime import datetime
+from django.utils import timezone
 
 
 class Seo(models.Model):
@@ -75,12 +76,16 @@ class Testimonial(models.Model):
 
 class VideoTestimonial(models.Model):
     """For video testimonials (vertical/portrait videos)"""
-    name = models.CharField(max_length=255)
-    video = models.FileField(
-        upload_to="testimonials/videos/",
-        help_text="Upload a vertical (portrait) video testimonial — e.g., 9:16 aspect ratio."
-    )
-    job = models.CharField(max_length=255, blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    video_link = models.CharField(max_length=500, blank=True, null=True)
+    thumbnail = models.ImageField(upload_to="video_testimonials/", blank=True,)
+    thumbnail_alt = models.CharField(max_length=255, blank=True, null=True)
+    date_added = models.DateTimeField(db_index=True, default=timezone.now, editable=True)
+
+    class Meta:
+        verbose_name = "VideoTestimonial"
+        verbose_name_plural = "Video Testimonials"
+        ordering = ('-date_added',)
 
     def __str__(self):
         return f"Video Testimonial - {self.name}"
@@ -114,6 +119,7 @@ class FAQ(models.Model):
     class Meta:
         verbose_name = "FAQ"
         verbose_name_plural = "FAQs"
+        
 
     def __str__(self):
         return self.question
