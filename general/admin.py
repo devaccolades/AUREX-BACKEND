@@ -55,16 +55,16 @@ class AboutusAdmin(ModelAdmin):
 
 
 
-@admin.register(Testimonial)
-class TestimonialAdmin(ModelAdmin):
-    list_display = ("name", "job","rating")
-    search_fields = ("job", "name",)
+# @admin.register(Testimonial)
+# class TestimonialAdmin(ModelAdmin):
+#     list_display = ("name", "job","rating")
+#     search_fields = ("job", "name",)
 
 
 @admin.register(VideoTestimonial)
 class VideoTestimonialAdmin(ModelAdmin):
-    list_display = ("name", "job",)
-    search_fields = ("job", "name",)
+    list_display = ("name", "video_link",)
+    search_fields = ("video_link", "name",)
 
 
 
