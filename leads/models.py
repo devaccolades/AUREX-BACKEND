@@ -21,6 +21,7 @@ class ProjectEnquiryForm(BaseModel):
     name = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField(max_length=255, null=True, blank=True)
     phone = models.CharField(max_length=18, blank=True, null=True)
+    message = models.TextField(blank=True, null=True)
     project = models.CharField(max_length=255, null=True, blank=True)
     preferred_unit = models.CharField(max_length=100, null=True, blank=True)
 
