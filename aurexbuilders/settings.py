@@ -14,6 +14,13 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+
+
+## imports for unfold
+from django.templatetags.static import static
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+
 # Load environment variables from .env file
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,8 +36,8 @@ SECRET_KEY = 'django-insecure-!b6up!qq3!@95n_hclva6*%x@!o2o$8w&g@1&c5_*$t0#h19$c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com','72.60.102.54','backend.aurexbuilders.com']
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com','72.60.102.54','backend.aurexbuilders.com']
 
 
 # Application definition
@@ -147,6 +154,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
@@ -177,3 +188,64 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
+
+UNFOLD = {
+    "SITE_TITLE": "Aurex Buiilder Admin",  # Updated Title
+    "SITE_HEADER": "Aurex Buiilder Admin",  # Sidebar Header
+        
+    # Updated Logos
+        "SITE_ICON": lambda request: static("branding/logo.png"),  
+        "SITE_LOGO": lambda request: static("branding/logo.png"),  
+
+# "TABS": [
+#         {
+#             "models": ["university.program"],  # replace with actual app_label.model_name
+#             "items": program_tabs_by_university,
+#         },
+#     ],
+    "SIDEBAR": {
+        "show_search": True,
+        
+          },
+    "LIST_DISPLAY_HEADER_ACTIONS": False, 
+
+    # Color scheme
+    "COLORS": {
+    "base": {
+        "50": "249 250 251",
+        "100": "243 244 246",
+        "200": "220 220 220", 
+        "300": "200 200 200",  
+        "400": "156 163 175",
+        "500": "107 114 128",
+        "600": "75 85 99",
+        "700": "50 50 50", 
+        "800": "30 30 30", 
+        "900": "20 20 20", 
+        "950": "10 10 10",  
+    },
+    "primary": {
+    "50":  "249 240 230",
+    "100": "242 222 198",
+    "200": "232 201 162",
+    "300": "220 176 122",
+    "400": "203 150 92",
+    "500": "181 124 66",   # #B57C42 (main brand color)
+    "600": "163 108 56",
+    "700": "138 90 46",
+    "800": "112 72 37",
+    "900": "92 58 30",
+    "950": "60 38 20",
+},
+
+    "font": {
+        "subtle-light": "var(--color-base-500)",  
+        "subtle-dark": "var(--color-base-400)",  
+        "default-light": "var(--color-base-600)", 
+        "default-dark": "var(--color-base-300)", 
+        "important-light": "var(--color-base-900)",  
+        "important-dark": "var(--color-base-100)",  
+    },
+    
+},
+}
