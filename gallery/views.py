@@ -46,7 +46,12 @@ class EventGalleryView(APIView):
 
     def get(self, request, event_id=None):
         try:
-            queryset = EventGallery.objects.filter(is_deleted=False)
+            # queryset = EventGallery.objects.filter(is_deleted=False)
+            queryset = (
+                        EventGallery.objects
+                        .filter(is_deleted=False, image__isnull=False)
+                        .exclude(image="")
+                        )
 
             if event_id:
                 queryset = queryset.filter(event_id=event_id)
@@ -56,3 +61,5 @@ class EventGalleryView(APIView):
 
         except Exception as e:
             return Response(str(e), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        
