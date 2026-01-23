@@ -36,8 +36,8 @@ SECRET_KEY = 'django-insecure-!b6up!qq3!@95n_hclva6*%x@!o2o$8w&g@1&c5_*$t0#h19$c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com','72.60.102.54','backend.aurexbuilders.com']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com','72.60.102.54','backend.aurexbuilders.com']
 
 
 # Application definition

@@ -6,7 +6,7 @@ from django.utils.text import slugify
 # Create your models here.
 CAREER_TYPE_CHOICES = (
     ('Full time', 'Full time'),
-    ('Pa        rt time', 'Part time'),
+    ('Part time', 'Part time'),
     ('Hybrid', 'Hybrid'),
     ('Remote', 'Remote'),
     ('Freelancer', 'Freelancer'),
@@ -19,8 +19,8 @@ class Careers(BaseModel):
     job_overview =  models.TextField(blank=True, null=True, help_text="Job description")
     location = models.CharField(max_length=255, blank=True, null=True)
     experience = models.CharField(max_length=255, blank=True, null=True)
-    key_responsibilities = models.TextField(blank=True, null=True, help_text="Job responsibilities use comma to separate")
-    requirements = models.TextField(blank=True, null=True, help_text="Job requirements use comma to separate")
+    key_responsibilities = models.TextField(blank=True, null=True, help_text="Job responsibilities use ., to separate")
+    requirements = models.TextField(blank=True, null=True, help_text="Job requirements use ., to separate")
     slug = models.SlugField(max_length=100, unique=True, blank=True)
 
     class Meta:
