@@ -115,6 +115,7 @@ BHK_CHOICES = (
         ("2BHK", "2 BHK"),
         ("3BHK", "3 BHK"),
         ("4BHK", "4 BHK"),
+        ("Floor Plan", "Floor Plan")
     )
    
 class FloorPlans(BaseModel):
