@@ -23,7 +23,7 @@ class Icons(BaseModel):
     class Meta:
         verbose_name = "Icons"
         verbose_name_plural = "I.Icons"
-        ordering = ('-date_added',)
+        ordering = ('name',)
 
     def __str__(self):
         return self.name
@@ -111,6 +111,7 @@ class CommonFacilities(BaseModel):
         return f"{self.project.name} - {self.name}"
 
 BHK_CHOICES = (
+        ("1BHK", "1 BHK"),
         ("2BHK", "2 BHK"),
         ("3BHK", "3 BHK"),
         ("4BHK", "4 BHK"),
