@@ -54,7 +54,7 @@ class JobApplicationPostAPIView(APIView):
                 html_content = get_template('JobApplication.html').render(context)
                 subject = 'Enquiry for Aurex Builders Careers'
                 from_email = settings.EMAIL_HOST_USER
-                to_email =  ["manjima.accolades@gmail.com"]
+                to_email =  ["hr@aurexbuilders.com"]
 
                 msg = EmailMultiAlternatives(subject, '', from_email, to_email)
                 msg.attach_alternative(html_content, "text/html")
