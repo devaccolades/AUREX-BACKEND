@@ -25,7 +25,7 @@ class ContactPostAPIView(APIView):
                     'New Contact Submission on Aurex Builders',
                     None,
                     settings.EMAIL_HOST_USER,
-                    ["manjima.accolades@gmail.com"], 
+                    ["sales@aurexbuilders.com"], 
                     fail_silently=False,
                     html_message=template,
                 )
@@ -63,7 +63,7 @@ class ProjectEnquiryPostAPIView(APIView):
                     'New Project Enquiry Submission on Aurex Builders',
                     None,
                     settings.EMAIL_HOST_USER,
-                    ["manjima.accolades@gmail.com"], 
+                    ["sales@aurexbuilders.com"], 
                     fail_silently=False,
                     html_message=template,
                 )
