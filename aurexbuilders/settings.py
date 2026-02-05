@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!b6up!qq3!@95n_hclva6*%x@!o2o$8w&g@1&c5_*$t0#h19$c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['82.112.226.176','admin.aurex.accoladesweb.com','72.60.102.54','backend.aurexbuilders.com']
@@ -168,13 +168,17 @@ CSRF_TRUSTED_ORIGINS = [
     "https://backend.aurexbuilders.com",    
     "http://127.0.0.1:8000",
     "http://localhost:8000",
-    "https://aurex.accoladesweb.com"    
+    "https://aurex.accoladesweb.com",
+    "https://aurexbuilders.com",
+    "https://www.aurexbuilders.com/"    
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://localhost:3000",
-    "https://aurex.accoladesweb.com"
+    "https://aurex.accoladesweb.com",
+    "https://aurexbuilders.com",
+    "https://www.aurexbuilders.com"
 ]
 
 # Default primary key field type
