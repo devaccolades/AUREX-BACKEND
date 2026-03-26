@@ -32,4 +32,7 @@ urlpatterns = [
 
     path("project-updates/", views.ProjectUpdatesView.as_view(), name="project-updates"),
     path("project-updates/<slug:slug>/", views.ProjectUpdatesView.as_view(), name="project-updates-by-slug"),
+    
+    path("project-page-titles-description/", views.ProjectsPageTitlesAndTextView.as_view(), name="project-page-titles-description"),
+    path("project-page-titles-description/<slug:slug>/", views.ProjectsPageTitlesAndTextView.as_view(), name="project-page-titles-description-by-slug"),
 ]

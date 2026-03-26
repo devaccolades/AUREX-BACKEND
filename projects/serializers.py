@@ -86,3 +86,10 @@ class ProjectUpdatesSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectUpdates
         fields = "__all__"
+
+
+class ProjectsPageTitlesAndTextSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectsPageTitlesAndText
+        fields = "__all__"
+        

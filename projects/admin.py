@@ -10,6 +10,7 @@ from .models import (
     YoutubeVideos,
     ProjectUpdates,
     ProjectImages,
+    ProjectsPageTitlesAndText,
 )
 from unfold.admin import ModelAdmin
 
@@ -81,3 +82,10 @@ class ProjectUpdatesAdmin(ModelAdmin):
     list_display = ("project", "date", "date_added", "is_deleted")
     search_fields = ("project__name",)
     list_filter = ("date", "date_added", "is_deleted")
+
+
+@admin.register(ProjectsPageTitlesAndText)
+class ProjectsPageTitlesAndTextAdmin(ModelAdmin):
+    list_display = ("project", "date_added", "is_deleted")
+    search_fields = ("project__name",)
+    list_filter = ( "date_added", "is_deleted")

@@ -210,3 +210,33 @@ class ProjectImages(BaseModel):
 
     def __str__(self):
         return f"{self.project.name} - Image"
+    
+
+class ProjectsPageTitlesAndText(BaseModel):
+    project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name="projects_page_titles_and_text")
+    overview_title = models.CharField(max_length=200, null=True, blank=True)
+    overview_description = models.TextField(blank=True, null=True)
+    amenities_title = models.CharField(max_length=200, null=True, blank=True)
+    amenities_description = models.TextField(blank=True, null=True)
+    floor_title = models.CharField(max_length=200, null=True, blank=True)
+    floor_description = models.TextField(null=True, blank=True)
+    spec_title = models.CharField(max_length=200, null=True, blank=True)
+    spec_description = models.TextField(null=True, blank=True)
+    loc_title = models.CharField(max_length=200, null=True, blank=True)
+    loc_description = models.TextField(null=True, blank=True)
+    loc_card_title_1 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_1 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_title_2 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_2 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_title_3 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_3 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_title_4 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_4 = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Projects Page Titles And Text"
+        verbose_name_plural = "J.Projects Page Titles And Text"
+        ordering = ('-date_added',)
+
+    def __str__(self):
+        return f"{self.project.name} - static contents"
