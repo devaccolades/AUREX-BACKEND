@@ -224,14 +224,16 @@ class ProjectsPageTitlesAndText(BaseModel):
     spec_description = models.TextField(null=True, blank=True)
     loc_title = models.CharField(max_length=200, null=True, blank=True)
     loc_description = models.TextField(null=True, blank=True)
+    loc_card_title = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_description = models.TextField(null=True, blank=True)
     loc_card_title_1 = models.CharField(max_length=200, null=True, blank=True)
-    loc_card_text_1 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_1 = models.CharField(max_length=500, null=True, blank=True)
     loc_card_title_2 = models.CharField(max_length=200, null=True, blank=True)
-    loc_card_text_2 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_2 = models.CharField(max_length=500, null=True, blank=True)
     loc_card_title_3 = models.CharField(max_length=200, null=True, blank=True)
-    loc_card_text_3 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_3 = models.CharField(max_length=500, null=True, blank=True)
     loc_card_title_4 = models.CharField(max_length=200, null=True, blank=True)
-    loc_card_text_4 = models.CharField(max_length=200, null=True, blank=True)
+    loc_card_text_4 = models.CharField(max_length=500, null=True, blank=True)
 
     class Meta:
         verbose_name = "Projects Page Titles And Text"
