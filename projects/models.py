@@ -87,6 +87,7 @@ class Amenities(BaseModel):
     subtext = models.CharField(max_length=200, blank=True, null=True)
     image = models.FileField(upload_to='projects/amenities/icons', blank=True, null=True)
     image_alt = models.CharField(max_length=125, null=True, blank=True)
+    icon = models.CharField(max_length=200, blank=True, null=True, default="Sparkles")
 
     class Meta:
         verbose_name = "Amenities"
