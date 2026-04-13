@@ -33,3 +33,8 @@ class EventGalleryAdmin(ModelAdmin):
     list_display = ("event", "date_added", "date_updated", "is_deleted")
     search_fields = ("event__event_name",)
     list_filter = ("event",)
+
+@admin.register(Videos)
+class VideosAdmin(ModelAdmin):
+    list_display = ("video_alt", "date_added", "date_updated", "is_deleted")
+    search_fields = ("video_alt",)

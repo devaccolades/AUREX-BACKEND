@@ -63,3 +63,13 @@ class EventGalleryView(APIView):
             return Response(str(e), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         
+class VideosView(APIView):
+    serializer_class = VideosSerializer
+
+    def get(self, request):
+        try:
+            data = Videos.objects.filter(is_deleted=False).first()
+            serializer = self.serializer_class(data, context={"request": request})
+            return Response(serializer.data)
+        except Exception as e:
+            return Response(str(e), status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -37,3 +37,8 @@ class EventGallerySerializer(serializers.ModelSerializer):
             request = self.context.get("request")
             return request.build_absolute_uri(obj.image.url) if request else obj.image.url
         return None
+    
+class VideosSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Videos
+        fields = "__all__"
