@@ -38,7 +38,15 @@ class EventGallerySerializer(serializers.ModelSerializer):
             return request.build_absolute_uri(obj.image.url) if request else obj.image.url
         return None
     
-class VideosSerializer(serializers.ModelSerializer):
+class EventVideosSerializer(serializers.ModelSerializer):
+    video_thumbnail = serializers.SerializerMethodField()
+
     class Meta:
-        model = Videos
+        model = EventVideos
         fields = "__all__"
+
+    def get_video_thumbnail(self, obj):
+        if obj.video_thumbnail:
+            request = self.context.get("request")
+            return request.build_absolute_uri(obj.video_thumbnail.url) if request else obj.video_thumbnail.url
+        return None

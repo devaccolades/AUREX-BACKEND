@@ -63,13 +63,14 @@ class EventGallery(BaseModel):
     def __str__(self):
         return f"Gallery Image for {self.event.event_name}"
 
-class Videos(BaseModel):
+class EventVideos(BaseModel):
+    event = models.ForeignKey(Events, on_delete=models.CASCADE, related_name='videos')
     video_url = models.CharField(max_length=1500, blank=True, null=True)  
     video_thumbnail = models.FileField(upload_to='projects/events/gallery/thumbnails', blank=True, null=True)
     video_alt = models.CharField(max_length=125, null=True, blank=True)
 
     class Meta:
-        verbose_name = " Video"
+        verbose_name = " Event Video"
         verbose_name_plural = " Videos"
         ordering = ('-date_added',)
 

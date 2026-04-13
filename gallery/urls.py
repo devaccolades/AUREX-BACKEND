@@ -13,4 +13,5 @@ urlpatterns = [
     path("event-gallery/<uuid:event_id>/",views.EventGalleryView.as_view(),name="event-gallery-by-event"),
 
     path("videos/", views.VideosView.as_view(), name="videos"),
+    path("videos/<uuid:event_id>/", views.VideosView.as_view(), name="videos-by-event"),
 ]
