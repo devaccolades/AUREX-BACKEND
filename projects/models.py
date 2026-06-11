@@ -39,6 +39,7 @@ PROJECT_STATUS_CHOICES = (
     ('upcoming', 'Upcoming'),
     ('ready to occupy', 'Ready to Occupy'),
     ('ongoing', 'Ongoing'),
+    ('New Launch', 'New Launch'),
 )
 
 class Projects(BaseModel):
