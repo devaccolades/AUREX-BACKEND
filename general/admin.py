@@ -78,7 +78,7 @@ class BlogForm(forms.ModelForm):
 
 @admin.register(Blog)
 class BlogAdmin(ModelAdmin):
-    exclude = ("slug","date_added")
+    exclude = ("date_added")
     form = BlogForm
 
 @admin.register(FAQ)
