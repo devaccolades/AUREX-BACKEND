@@ -130,7 +130,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=255)
     type = models.CharField(max_length=255,blank=True, null=True)
     image = models.ImageField(upload_to="blogs/covers/", blank=True, null=True)
-    slug = models.SlugField(max_length=100, unique=True, blank=True)  # blank=True to allow setting it in save()
+    slug = models.SlugField(max_length=500, unique=True, blank=True)  # blank=True to allow setting it in save()
     content = RichTextField()
     date_added = models.DateField(auto_now_add=True)
     meta_title = models.CharField(
