@@ -15,11 +15,11 @@ from .models import (
 from unfold.admin import ModelAdmin
 
 
-@admin.register(Icons)
-class IconsAdmin(ModelAdmin):
-    list_display = ("name", "date_added", "date_updated", "is_deleted")
-    search_fields = ("name",)
-    list_filter = ("date_added", "is_deleted")
+# @admin.register(Icons)
+# class IconsAdmin(ModelAdmin):
+#     list_display = ("name", "date_added", "date_updated", "is_deleted")
+#     search_fields = ("name",)
+#     list_filter = ("date_added", "is_deleted")
 
 
 @admin.register(Projects)
