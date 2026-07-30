@@ -44,7 +44,7 @@ class AmenitiesAdmin(ModelAdmin):
 
 @admin.register(CommonFacilities)
 class CommonFacilitiesAdmin(ModelAdmin):
-    list_display = ("project", "name", "icon", "date_added", "is_deleted")
+    list_display = ("project", "name",  "date_added", "is_deleted")
     search_fields = ("name", "project__name")
     list_filter = ("date_added", "is_deleted")
 
@@ -58,14 +58,14 @@ class FloorPlansAdmin(ModelAdmin):
 
 @admin.register(Specifications)
 class SpecificationsAdmin(ModelAdmin):
-    list_display = ("project", "title", "icon", "date_added", "is_deleted")
+    list_display = ("project", "title", "date_added", "is_deleted")
     search_fields = ("title", "project__name")
     list_filter = ("date_added", "is_deleted")
 
 
 @admin.register(LocationAdvantages)
 class LocationAdvantagesAdmin(ModelAdmin):
-    list_display = ("project", "category", "icon", "date_added", "is_deleted")
+    list_display = ("project", "category", "date_added", "is_deleted")
     search_fields = ("category", "project__name")
     list_filter = ("date_added", "is_deleted")
 
