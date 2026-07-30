@@ -34,6 +34,7 @@ class CommonFacilitiesSerializer(serializers.ModelSerializer):
             "name",
             "subtext",
             "icon",
+            "icon_name",
         )
 
 
@@ -52,6 +53,7 @@ class SpecificationsSerializer(serializers.ModelSerializer):
             "title",
             "description",
             "icon",
+            "icon_name",
         )
 
 
@@ -63,6 +65,7 @@ class LocationAdvantagesSerializer(serializers.ModelSerializer):
             "id",
             "category",
             "icon",
+            "icon_name",
             "advantage_1",
             "distance_1",
             "advantage_2",
