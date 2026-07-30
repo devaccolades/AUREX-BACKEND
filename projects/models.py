@@ -102,7 +102,7 @@ class CommonFacilities(BaseModel):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='common_facilities', blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)  
     subtext = models.CharField(max_length=200, blank=True, null=True)
-    Icon_name = models.CharField(max_length=200, blank=True, null=True, default="Sparkles", help_text="Enter the name of the icon from the lucide react Icons")
+    icon_name = models.CharField(max_length=200, blank=True, null=True, default="Sparkles", help_text="Enter the name of the icon from the lucide react Icons")
     icon = models.ForeignKey(Icons, on_delete=models.CASCADE, related_name='common_facilities', blank=True, null=True)
 
     class Meta:
@@ -142,7 +142,7 @@ class Specifications(BaseModel):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='specifications')
     title = models.CharField(max_length=250, blank=True, null=True)  
     description = models.TextField(blank=True, null=True)
-    Icon_name = models.CharField(max_length=200, blank=True, null=True, default="Sparkles", help_text="Enter the name of the icon from the lucide react Icons")
+    icon_name = models.CharField(max_length=200, blank=True, null=True, default="Sparkles", help_text="Enter the name of the icon from the lucide react Icons")
     icon = models.ForeignKey(Icons, on_delete=models.CASCADE,blank=True, null=True)
 
     class Meta:
@@ -156,7 +156,7 @@ class Specifications(BaseModel):
 class LocationAdvantages(BaseModel):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE, related_name='location_advantages')
     category = models.CharField(max_length=250, blank=True, null=True)  
-    Icon_name = models.CharField(max_length=200, blank=True, null=True, default="Sparkles", help_text="Enter the name of the icon from the lucide react Icons")
+    icon_name = models.CharField(max_length=200, blank=True, null=True, default="Sparkles", help_text="Enter the name of the icon from the lucide react Icons")
     icon = models.ForeignKey(Icons, on_delete=models.CASCADE, blank=True, null=True)
     advantage_1 = models.CharField(max_length=250, blank=True, null=True)  
     distance_1 = models.CharField(max_length=250, blank=True, null=True)
