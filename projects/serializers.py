@@ -26,14 +26,14 @@ class AmenitiesSerializer(serializers.ModelSerializer):
 
 
 class CommonFacilitiesSerializer(serializers.ModelSerializer):
-    icon = serializers.CharField(source="icon.name", read_only=True)
+    # icon = serializers.CharField(source="icon.name", read_only=True)
     class Meta:
         model = CommonFacilities
         fields = (
             "id",
             "name",
             "subtext",
-            "icon",
+            # "icon",
             "icon_name",
         )
 
@@ -45,26 +45,26 @@ class FloorPlansSerializer(serializers.ModelSerializer):
 
 
 class SpecificationsSerializer(serializers.ModelSerializer):
-    icon = serializers.CharField(source="icon.name", read_only=True)
+    # icon = serializers.CharField(source="icon.name", read_only=True)
     class Meta:
         model = Specifications
         fields = (
             "id",
             "title",
             "description",
-            "icon",
+            # "icon",
             "icon_name",
         )
 
 
 class LocationAdvantagesSerializer(serializers.ModelSerializer):
-    icon = serializers.CharField(source="icon.name", read_only=True)
+    # icon = serializers.CharField(source="icon.name", read_only=True)
     class Meta:
         model = LocationAdvantages
         fields = (
             "id",
             "category",
-            "icon",
+            # "icon",
             "icon_name",
             "advantage_1",
             "distance_1",
